@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+int main ()
+{
+   int i, j,temp,pass=0;
+   int a[32] = {73,118,97,110,32,66,108,97,122,101,115,107,105,32,105,110,107,105,49,48,48,54};
+   cout <<"Input list ...\n";
+   for(i = 0; i<32; i++) {
+      cout <<a[i]<<"\t";
+   }
+cout<<endl;
+for(i = 0; i<32; i++) {
+   for(j = i+1; j<32; j++)
+   {
+      if(a[j] < a[i]) {
+         temp = a[i];
+         a[i] = a[j];
+         a[j] = temp;
+      }
+   }
+pass++;
+}
+cout <<"Sorted Element List ...\n";
+for(i = 0; i<32; i++) {
+   cout <<a[i]<<"\t";
+}
+cout<<"\nNumber of passes taken to sort the list:"<<pass<<endl;
+return 0;
+}
+//sporeduva po dva elementi posledovatelno po nizata i ako prvio e pogolem od vtorio element vo parot mu gi smenuva mestata i se povtoruva vo pojce iteracii i so sekoja iteracija najgolemio element se stava na krajo od nizata, se dodeka celata niza ne e podredena
